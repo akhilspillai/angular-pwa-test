@@ -1,6 +1,6 @@
 {
-  "name": "angular.io-example",
-  "short_name": "angular.io-example",
+  "name": "angular-pwa-test",
+  "short_name": "angular-pwa-test",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

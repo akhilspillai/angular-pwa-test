@@ -9,15 +9,20 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { NotificationService } from './services/notification.service';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { APIInterceptor } from './https/api-interceptor';
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
     ]),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }), // TODO: enabled: environment.production
+    RouterModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -27,6 +32,15 @@ import { environment } from '../environments/environment';
   ],
   bootstrap: [
     AppComponent
+  ],
+  providers: [
+    HttpClient,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: APIInterceptor,
+      multi: true,
+    },
+    NotificationService
   ]
 })
 export class AppModule { }
