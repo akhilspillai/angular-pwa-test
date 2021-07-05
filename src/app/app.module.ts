@@ -11,7 +11,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NotificationService } from './services/notification.service';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { APIInterceptor } from './https/api-interceptor';
+import { APIInterceptor } from './http/api-interceptor';
 
 @NgModule({
   imports: [
