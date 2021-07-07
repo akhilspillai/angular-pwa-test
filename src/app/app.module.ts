@@ -11,7 +11,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NotificationService } from './services/notification.service';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { APIInterceptor } from './https/api-interceptor';
+import { APIInterceptor } from './http/api-interceptor';
 
 @NgModule({
   imports: [
@@ -20,7 +20,7 @@ import { APIInterceptor } from './https/api-interceptor';
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
     ]),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }), // TODO: enabled: environment.production
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     RouterModule,
     HttpClientModule
   ],
