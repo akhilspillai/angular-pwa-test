@@ -20,7 +20,7 @@ import { APIInterceptor } from './http/api-interceptor';
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
     ]),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }), // TODO: enabled: environment.production
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     RouterModule,
     HttpClientModule
   ],
