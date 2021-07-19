@@ -7,7 +7,7 @@ export class NotificationService {
   constructor(private http: HttpClient) {}
 
   addPushSubscriber(sub: any) {
-    return this.http.post("/api/notifications/register", sub, {
+    return this.http.post("https://affectionate-liskov-6bc202.netlify.app/.netlify/functions/api/notifications/register", sub, {
       responseType: "text",
     });
   }

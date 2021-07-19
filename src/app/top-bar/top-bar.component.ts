@@ -9,7 +9,7 @@ import { NotificationService } from '../services/notification.service';
 })
 export class TopBarComponent {
 
-  readonly VAPID_PUBLIC_KEY = "BHyoUBN7NtNslQsqHB39-GYg2U5dM0bQXo-_h-sHuPibPkdxUXKWGyruNPHGihCuroz5rLM9_vPiySAtI5d7gyA";
+  readonly VAPID_PUBLIC_KEY = "BBFn_uPDK0L4hc9Lmk1e4yZv4LA2Qi1mjXtGKSOup_g0UMfxRoQgZZFH0riGveUvhBftu_YkshRxgfzKZWEW3BE";
 
   constructor(private swPush: SwPush, private notificationService: NotificationService) {
 
