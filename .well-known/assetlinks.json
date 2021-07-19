@@ -1,0 +1,10 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.wavemaker.pwa",
+      "sha256_cert_fingerprints": [
+        "4C:C6:52:57:DB:16:DC:BC:89:73:71:25:7F:A4:77:37:B3:D6:8D:29:FE:2B:5A:B6:35:AD:78:FE:B0:F7:0A:BF"
+      ]
+    }
+  }]
